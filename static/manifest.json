@@ -1,0 +1,100 @@
+{
+    "id": "/",
+    "scope": "/",
+    "name": "KVC-R",
+    "display": "standalone",
+    "start_url": "/",
+    "short_name": "KVC-R",
+    "theme_color": "#EC5D0F",
+    "description": "Bot App",
+    "orientation": "any",
+    "background_color": "#F27A3B",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "display_override": ["window-controls-overlay"],
+    "launch_handler": {
+      "client_mode": "focus-existing"
+    },
+    "icons": [
+      {
+        "src": "assets/icons/512X512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/icons/192X192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/icons/48X48.png",
+        "sizes": "48x48",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/icons/24X24.png",
+        "sizes": "24x24",
+        "type": "image/png"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "screenshots/screenshot-desktop.png",
+        "sizes": "1440x900",
+        "type": "image/png",
+        "form_factor": "wide"
+      },
+      {
+        "src": "screenshots/screenshot-mobile.png",
+        "sizes": "640x1136",
+        "type": "image/png",
+        "form_factor": "narrow"
+      }
+    ],
+    "features": [
+      "Cross Platform",
+      "fast",
+      "simple"
+    ],
+    "categories": [
+      "social"
+    ],
+    "shortcuts": [
+      {
+        "name": "Wallet",
+        "short_name": "Wallet",
+        "description": "Open Wallet",
+        "url": "/#wallet",
+        "icons": [{ "src": "assets/icons/192X192.png", "sizes": "192x192" }]
+      }
+    ],
+    "widgets": [
+      {
+        "name": "KVC-R Widget",
+        "tag": "KVC-R Widget",
+        "ms_ac_template": "widget/ac.json",
+        "data": "widget/data.json",
+        "description": "A simple widget example from pwa-starter.",
+        "screenshots": [
+          {
+            "src": "assets/screenshots/widget-screen.png",
+            "sizes": "500x500",
+            "label": "Widget screenshot"
+          }
+        ],
+        "icons": [
+          {
+            "src": "assets/icons/48x48.png",
+            "sizes": "48x48"
+          }
+        ]
+      }
+    ],
+    "splash_screens": [
+      {
+        "src": "assets/splashscreen/background.png",
+        "sizes": "1080x1920",
+        "type": "image/png"
+      }
+    ]
+  }
