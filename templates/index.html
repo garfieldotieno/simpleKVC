@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000"> <!-- Define theme color for PWA -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"> <!-- Reference favicon -->
+    
+    <!-- Link to the manifest -->
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/css/splide.min.css" integrity="sha512-KhFXpe+VJEu5HYbJyKQs9VvwGB+jQepqb4ZnlhUF/jQGxYJcjdxOTf6cr445hOc791FFLs18DKVpfrQnONOB1g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap-grid.min.css" integrity="sha512-uzG4YY/dpwIEUrfjYud6T7ieVM06DwkHYiB28wgbtq0w4hSGx3XyDF2Oh/VaxB0hmyxyR3hYHNQc4Chb/dS1Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap-reboot.min.css" integrity="sha512-Hvxqga90bvpEid1McCftiBMcfB8cPXI+TZR3GVf4KUdLu3NPx6/gPXSQTdY7AHaLLJDSJym6kOotc713b2D7gQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" integrity="sha512-rt/SrQ4UNIaGfDyEXZtNcyWvQeOq0QLygHluFQcSjaGB04IxWhal71tKuzP6K8eYXYB6vJV4pHkXcmFGGQ1/0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+    <!-- Link to the main css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    
+    <title>KVC-R</title>
+</head>
+
+<body class="body">
+    <div class="parent_display_container">
+        
+        <!-- Bot Display Section -->
+        <div class="bot_display_section">
+            <div class="bot_app">
+                <div class="bot_app_screen">
+                    <img id="botScreenBig" class="bot_screen" src="" alt="Bot Screen">
+                </div>
+                <div id="map" class="bot_app_screen_map" style="display: none">
+                    
+                </div>
+                <h5 id="botHeader" class="bot_header">Bot Header</h5>
+                <div id="botInfoDisplay" class="bot_app_button_stack"></div>
+
+                <!-- Dynamic button stacks -->
+                <div id="botButtonStackBig" class="bot_app_button_stack"></div>
+                <div id="botButtonStackMiddle" class="bot_app_button_stack"></div>
+                <div id="botButtonStackContact" class="bot_app_button_stack"></div>
+
+                <div id="botNavigation" class="bot_app_button_stack"></div>
+                <div id="botGBATopButtonStack" class="bot_app_button_stack"></div>
+                <div id="botGBAMiddleButtonStack" class="bot_app_button_stack"></div>
+                <div id="botGBAPlayButtonStack" class="bot_app_button_stack"></div>
+                <div id="botGBAFooterButtonStack" class="bot_app_button_stack"></div>
+            </div>
+        </div>
+
+        <!-- Large Display Section -->
+        <div class="large_display_section">
+            <div id="itemCardContainer" class="item_card_container"></div>
+            <div id="GBAItemCardContainer" class="item_card_container"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/mds.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/data.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script src="{{ url_for('static', filename='js/service-worker-register.js') }}"></script>
+
+    <!-- External JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/js/splide.js" integrity="sha512-sl3gwaqOnxE9dQ3IY+2A8pDjhOhOFqyfamT7GSaT3Cbz8svrV1aWHOGZ1ZG1GExNLpK5VvRGD5ULSHEQ8fajGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- html5-qrcode -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</body>
+</html>
